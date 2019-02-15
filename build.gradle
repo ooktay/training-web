@@ -49,5 +49,6 @@ apply plugin: 'com.snapbytes.snaptest'
 snaptest {
     useWebClient = true
     stepsPackages = ['com.snapbytes.snaptest.step']
+    parallelRuns = 2
 }
 
