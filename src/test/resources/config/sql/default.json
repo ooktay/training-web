@@ -1,0 +1,4 @@
+{
+  "test customer": "select customerName from customers where customerNumber={the customer number}",
+  "two customers": "select customerName from customers where customerNumber in (124,125)"
+}

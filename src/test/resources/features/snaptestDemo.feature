@@ -3,7 +3,7 @@ Feature: Eğitim
   Background:
     Given I open browser
 
-  @dene
+  @dene1
   Scenario: Create Bank Account
     Given I am registered with user
     And I open home page
