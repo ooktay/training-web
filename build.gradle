@@ -17,11 +17,11 @@ buildscript {
             }
             url artifactoryUrl
         }
-        mavenCentral()
+        jcenter()
         mavenLocal()
     } : {
         mavenLocal()
-        mavenCentral()
+        jcenter()
     }
     repositories repositoriesClosure
     dependencies {
