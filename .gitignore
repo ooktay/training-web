@@ -1,0 +1,8 @@
+.gradle
+build
+/rerun
+/tools
+.idea
+/out
+*.iml
+/gradle\.properties

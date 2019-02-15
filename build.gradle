@@ -18,14 +18,16 @@ buildscript {
             url artifactoryUrl
         }
         jcenter()
+        maven { url 'https://plugins.gradle.org/m2/' }
         mavenLocal()
     } : {
-        mavenLocal()
         jcenter()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        mavenLocal()
     }
     repositories repositoriesClosure
     dependencies {
-        classpath group:'com.snapbytes', name : 'snaptest', version: '0.8.+', changing: true
+        classpath group:'com.snapbytes', name : 'snaptest', version: '0.9.+', changing: true
     }
 }
 repositories repositoriesClosure
@@ -52,7 +54,7 @@ dependencies {
 
 snaptest {
     useWebClient = true
-    useSql = true
+    useSql = false
 
     stepsPackages = ['com.snapbytes.snaptest.step']
     parallelRuns = 2

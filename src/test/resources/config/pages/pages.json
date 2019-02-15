@@ -2,23 +2,37 @@
   "common": {
     "baseUrlKey": "site",
     "elements": {
+      "entity list": "table"
     }
   },
-  "home" : {
+  "home": {
     "parent": "common",
     "uriPath": "#/",
     "elements": {
-      "SignIn":"button[type='submit']"
+      "SignIn": "button[type='submit']"
     }
   },
-
-  "bank account new" : {
-  "parent": "common",
-  "uriPath": "#/bank-account/new",
-  "elements": {
-    //"Save":"button[type='submit']",
-    "Save":"/html/body/div[1]/div/div/form/div[3]/button[2]"
-    //"Save":"span.glyphicon-save"
+  "bank account new": {
+    "parent": "common",
+    "uriPath": "#/bank-account/new",
+    "elements": {
+      //"Save":"button[type='submit']",
+      "Save": "/html/body/div[1]/div/div/form/div[3]/button[2]"
+      //"Save":"span.glyphicon-save"
+    }
+  },
+  "bank account detail": {
+    "parent": "common",
+    "uriPath": "#/bank-account/bank-account/{id}",
+    "elements": {
+      "Save": "/html/body/div[1]/div/div/form/div[3]/button[2]"
+    }
+  },
+  "api docs": {
+    "parent": "common",
+    "uriPath": "#/docs",
+    "elements": {
+       "inner": "iframe"
+    }
   }
-}
 }
