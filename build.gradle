@@ -1,0 +1,53 @@
+import java.util.concurrent.TimeUnit
+
+buildscript {
+    String artifactoryUrl = 'https://artifactory.snapbytes.com/artifactory/dist/'
+    boolean useArtifactory = true
+    if (rootProject.hasProperty('ARTIFACTORY_URL')) {
+        useArtifactory = true
+        artifactoryUrl = rootProject.property('ARTIFACTORY_URL')
+    }
+
+    configurations.classpath.resolutionStrategy.cacheDynamicVersionsFor(0, TimeUnit.SECONDS)
+    ext.repositoriesClosure = useArtifactory ? {
+        maven {
+            credentials {
+                username ARTIFACTORY_USER
+                password ARTIFACTORY_PASSWORD
+            }
+            url artifactoryUrl
+        }
+        mavenCentral()
+        mavenLocal()
+    } : {
+        mavenLocal()
+        mavenCentral()
+    }
+    repositories repositoriesClosure
+    dependencies {
+        classpath group:'com.snapbytes', name : 'snaptest', version: '0.6.+', changing: true
+    }
+}
+repositories repositoriesClosure
+
+task copySuiteLogs(type: Zip){
+    from 'build'
+    include '**/*'
+    archiveName "reports-${getDate()}.zip"
+    destinationDir file('reports')
+}
+def getDate(){
+    return new Date().format('ddMMyyyyHHmmss')
+}
+
+group "com.snapbytes"
+version 1.0
+
+apply plugin: 'java'
+apply plugin: 'com.snapbytes.snaptest'
+
+snaptest {
+    useWebClient = true
+    stepsPackages = ['com.snapbytes.snaptest.step']
+}
+
