@@ -56,7 +56,7 @@ snaptest {
     useWebClient = true
     useSql = false
 
-    stepsPackages = ['com.snapbytes.snaptest.step']
-    parallelRuns = 2
+    stepsPackages = ['steps']
+    //parallelRuns = 2
 }
 

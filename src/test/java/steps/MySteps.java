@@ -1,6 +1,7 @@
 package steps;
 
 import com.snapbytes.snaptest.step.CommonSteps;
+import cucumber.api.java.AfterStep;
 import cucumber.api.java.Before;
 import cucumber.api.java.BeforeStep;
 
@@ -17,7 +18,7 @@ public class MySteps {
         System.out.println("Baslarken");
     }
 
-//    @BeforeStep
+//    @AfterStep
 //    public void arada() {
 //        commonSteps.waitForNSeconds(1);
 //    }

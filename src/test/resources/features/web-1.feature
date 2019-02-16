@@ -54,6 +54,8 @@ Feature: Web 1
     And I see bank account detail page with parameters:
       | id | the account id |
 
+    When I switch to profile "clerk"
+
 
   Scenario: switching frames
     Given I open browser
@@ -73,12 +75,44 @@ Feature: Web 1
     And I click "account-resource"
 
     Then I see "saveAccount"
+    And I switch to main window
 
-#  Scenario: switching windows
-  #TODO Administration -> Database -> see new window
+    @dene
+  Scenario: switching windows
+    Given I open browser
+    And I am registered with admin
+    And I open home page
+    And I click "Account"
+    And I click "Sign in"
+    And I wait for 2 seconds
+    And I fill:
+      | username | my username |
+      | password | my password |
+    And I click SignIn
+    And I wait for 2 seconds
+    And I click "Administration"
+    And I click "Database"
 
-#  Scenario: handling alerts
+    Then I see new window with database page inside
+    And I see login element
+
+
+  Scenario: handling alerts
   #TODO Administration -> Metrics -> click eye image -> accept alert
+    Given I open browser
+    And I am registered with admin
+    And I open home page
+    And I click "Account"
+    And I click "Sign in"
+    And I wait for 2 seconds
+    And I fill:
+      | username | my username |
+      | password | my password |
+    And I click SignIn
+    And I wait for 2 seconds
+    And I click "Administration"
+    And I click "Metrics"
+
 
 #  Scenario: timeouts
   #TODO Test google timer with 5 secs

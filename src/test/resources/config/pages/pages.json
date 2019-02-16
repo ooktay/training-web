@@ -34,5 +34,9 @@
     "elements": {
        "inner": "iframe"
     }
+  },
+  "database": {
+    "parent": "common",
+    "uriPath": "h2-console/login.jsp"
   }
 }
