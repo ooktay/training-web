@@ -1,6 +1,10 @@
 {
-  "google home": {
+  "google common": {
     "baseUrlKey": "google",
+    "optionsKey": "google"
+  },
+  "google home": {
+    "parent": "google common",
     "uriPath": "",
     "elements": {
       "query": "input[name='q']",
@@ -8,10 +12,10 @@
     }
   },
   "google search results": {
-    "baseUrlKey": "google",
+    "parent": "google common",
+    "optionsKey": "google",
     "uriPath": "search",
     "elements": {
-      "act timer section": "#act-timer-section",
       "timer box": "#act-timer-section .act-tim-txt-cnt"
     }
   }

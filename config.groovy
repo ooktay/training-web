@@ -3,12 +3,13 @@ environments {
         baseUrl {
             site = 'http://localhost:8080/'
             google = 'https://www.google.com/'
+            netas = 'http://www.netas.com.tr/'
         }
         web {
             driverType = 'CHROME'
             pageLoadTimeout = 5
             elementTimeout = 3
-            //language = 'tr'
+            language = 'tr'
         }
         sqldb {
             'default' {

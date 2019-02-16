@@ -132,4 +132,7 @@ Feature: Web 1
     When I fill:
       | timer box | 5 |
     And I click "Start" in act timer section
+
     Then I see timer box becomes "0s" in 10 seconds
+
+    And click "OK" in act timer section
