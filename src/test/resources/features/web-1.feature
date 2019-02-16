@@ -48,9 +48,12 @@ Feature: Web 1
 
     And I save entity list table row as the approved row where:
       | Name | the account name |
+
     And I save values of the approved row:
       | ID | the account id |
+
     And I click "View" in the approved row
+
     And I see bank account detail page with parameters:
       | id | the account id |
 
@@ -129,4 +132,4 @@ Feature: Web 1
     When I fill:
       | timer box | 5 |
     And I click "Start" in act timer section
-    Then I see timer box contains "0s" in 10 seconds
+    Then I see timer box becomes "0s" in 10 seconds
