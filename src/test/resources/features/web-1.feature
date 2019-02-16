@@ -120,7 +120,7 @@ Feature: Web 1
     Then I accept alert
     And I verify the alert message equals "dur bakalim"
 
-  @dene @debug
+
   Scenario: timeouts
     Given I open browser
 
