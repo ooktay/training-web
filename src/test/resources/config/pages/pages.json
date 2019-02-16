@@ -38,5 +38,17 @@
   "database": {
     "parent": "common",
     "uriPath": "h2-console/login.jsp"
+  },
+  "application metrics": {
+    "parent": "common",
+    "uriPath": "#/metrics",
+    "elements": {
+      "thread dump": "a[data-target='#threadDump']"
+    }
+  },
+  "slow page": {
+    "parent": "common",
+    "uriPath": "doesntexit",
+    "loadTimeout": "10"
   }
 }

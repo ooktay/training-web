@@ -1,0 +1,18 @@
+{
+  "google home": {
+    "baseUrlKey": "google",
+    "uriPath": "",
+    "elements": {
+      "query": "input[name='q']",
+      "search": "input[name='btnK']"
+    }
+  },
+  "google search results": {
+    "baseUrlKey": "google",
+    "uriPath": "search",
+    "elements": {
+      "act timer section": "#act-timer-section",
+      "timer box": "#act-timer-section .act-tim-txt-cnt"
+    }
+  }
+}

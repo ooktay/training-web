@@ -77,7 +77,7 @@ Feature: Web 1
     Then I see "saveAccount"
     And I switch to main window
 
-    @dene
+
   Scenario: switching windows
     Given I open browser
     And I am registered with admin
@@ -98,7 +98,6 @@ Feature: Web 1
 
 
   Scenario: handling alerts
-  #TODO Administration -> Metrics -> click eye image -> accept alert
     Given I open browser
     And I am registered with admin
     And I open home page
@@ -112,7 +111,22 @@ Feature: Web 1
     And I wait for 2 seconds
     And I click "Administration"
     And I click "Metrics"
+    And I see application metrics page
+    And I click thread dump
 
+    Then I accept alert
+    And I verify the alert message equals "dur bakalim"
 
-#  Scenario: timeouts
-  #TODO Test google timer with 5 secs
+  @dene @debug
+  Scenario: timeouts
+    Given I open browser
+
+    When I open google home page
+    And I fill:
+      | query | timer |
+    And I click search
+    Then I see google search results page
+    When I fill:
+      | timer box | 5 |
+    And I click "Start" in act timer section
+    Then I see timer box contains "0s" in 10 seconds
